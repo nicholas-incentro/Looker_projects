@@ -20,14 +20,4 @@ view: product_list {
     type: string
     sql: ${TABLE}.v2ProductName ;;
   }
-
-  measure: brands {
-    type: count
-    sql: ${v2_product_name} ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [v2_product_name]
-  }
 }
