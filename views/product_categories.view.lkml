@@ -20,9 +20,4 @@ view: product_categories {
     type: string
     sql: ${TABLE}.productSKU ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: []
-  }
 }
