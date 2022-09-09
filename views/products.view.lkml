@@ -35,6 +35,7 @@ view: products {
   measure: average_ordered_quantity {
     type: average
     sql: ${ordered_quantity} ;;
+    value_format: "0"
   }
 
   dimension: restocking_lead_time {
@@ -60,10 +61,5 @@ view: products {
   dimension: stock_level {
     type: number
     sql: ${TABLE}.stockLevel ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [name]
   }
 }
