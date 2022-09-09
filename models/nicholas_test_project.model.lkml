@@ -16,10 +16,16 @@ datagroup: nicholas_test_project_default_datagroup {
 
 persist_with: nicholas_test_project_default_datagroup
 
-explore: product_list {
+explore: products {
   join: product_categories{
     type:  left_outer
-    sql_on: ${product_list.product_sku} = ${product_categories.product_sku} ;;
-    relationship: many_to_many
+    sql_on: ${products.sku} = ${product_categories.product_sku} ;;
+    relationship: one_to_many
+  }
+
+  join: product_list {
+    type: left_outer
+    sql_on: ${products.sku} = ${product_list.product_sku} ;;
+    relationship: one_to_many
   }
 }
