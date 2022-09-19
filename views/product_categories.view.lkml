@@ -20,4 +20,10 @@ view: product_categories {
     type: string
     sql: ${TABLE}.productSKU ;;
   }
+
+  measure: distinct_product_categories {
+    type: sum_distinct
+    sql_distinct_key: ${category} ;;
+  }
+
 }

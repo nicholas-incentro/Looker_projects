@@ -133,7 +133,6 @@ view: revenue_reporting {
     sql: ${product_price} ;;
   }
 
-
   measure: count {
     type: count
     drill_fields: [product_name]
