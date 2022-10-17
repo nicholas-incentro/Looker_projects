@@ -5,7 +5,8 @@ connection: "nicholas_looker_training"
 include: "/views/**/orders.view"
 include: "/views/**/accounts.view"
 include: "/views/**/web_events.view"
-
+include: "/views/**/sales_reps.view"
+include: "/views/**/region.view"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -18,8 +19,15 @@ include: "/views/**/web_events.view"
 
    join: web_events {
      relationship: many_to_one
-     sql_on: ${web_events.account_id}.}.id} = ${accounts.id}} ;;
+     sql_on: ${web_events.account_id} = ${accounts.id}} ;;
    }
+  }
+
+explore: sales_reps {
+  join: region {
+    relationship: many_to_one
+    sql_on: ${sales_reps.region_id} = ${region.id} ;;
+  }
 }
 
 
